@@ -793,12 +793,17 @@ img{
   
  
 }
-
+ img{
+    height: auto;
+    padding-top: 3em;
+  }
+ 
 
 @media screen and (max-width: 600px) {
 
    img{
-    width: 100px;
+    width: 300px !important;
+    height: auto;
     padding-top: 3em;
   }
  
