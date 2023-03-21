@@ -802,7 +802,7 @@ img{
 @media screen and (max-width: 600px) {
 
    img{
-    width: 300px !important;
+    width: 100px !important;
     height: auto;
     padding-top: 3em;
   }
