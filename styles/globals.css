@@ -794,10 +794,22 @@ img{
   .col50{
     width: 100%;
   }
+  
+ 
+}
+
+
+@media screen and (max-width: 600px) {
+
+   img{
+    width: 100px;
+    padding-top: 3em;
+  }
  
 }
 
 @media screen and (min-width: 798px) {
+ 
   .wrapper {
     flex-direction: row;
     justify-content: space-between;

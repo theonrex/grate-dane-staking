@@ -86,12 +86,6 @@ const saveUserInfo = async () => {
       <div className="container">
         <h1 className={styles.h1}>Thirdweb + Firebase</h1>
 
-        <p className={styles.explain}>
-          {user
-            ? null
-            : "To proceed, please authenticate using your wallet by clicking on the button below. This will result in the creation of a user account for you in Firebase Auth and a document in Firestore."}
-        </p>
-
         {address ? (
           <div className={styles.rowx}>
             {!user ? (
@@ -183,7 +177,15 @@ const saveUserInfo = async () => {
             {}
           </div>
         ) : (
-          <ConnectWallet className="connect_wallet" btnTitle="Connect Wallet" />
+          <div>
+            <p className={styles.explain}>
+             To proceed, please authenticate using your wallet by clicking on the button below. This will result in the creation of a user account for you in Firebase Auth and a document in Firestore."
+            </p>
+            <ConnectWallet
+              className="connect_wallet"
+              btnTitle="Connect Wallet"
+            />
+          </div>
         )}
       </div>
     </div>
