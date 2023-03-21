@@ -25,7 +25,8 @@
     "react-icons": "^4.7.1",
     "react-query": "^3.39.3",
     "urql": "^3.0.3",
-    "uuid": "^9.0.0"  },
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
     "@types/react": "18.0.27",
     "@types/uuid": "^9.0.0",

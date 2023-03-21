@@ -14,7 +14,7 @@ export default function initializeFirebaseClient(): {
     storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
     messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
     appId: process.env.NEXT_PUBLIC_APP_ID,
-    measurementId: "G-XRR47BLB2S",
+    measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
   });
 
   const db = getFirestore(firebaseApp);
