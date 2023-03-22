@@ -10,7 +10,7 @@ export default function initializeFirebaseServer(): {
 } {
   const clientEmail = process.env.NEXT_PUBLIC_FIREBASE_CLIENT_EMAIL;
 
-  const privateKey = process.env.NEXT_PUBLIC_FIREBASE_PRIVATE_KEY;;
+const privateKey = process.env.MY_PRIVATE_VARIABLE;
 
   const projectId = process.env.NEXT_PUBLIC_INIT_PROJECT_ID;
 

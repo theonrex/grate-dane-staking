@@ -26,9 +26,6 @@ export default function Login() {
   const [fullName, setfullName] = useState("");
   const [about, setAbout] = useState("");
 
-
- 
-
   const signIn = async () => {
     // Use the same address as the one specified in _app.tsx.
     const payload = await thirdwebAuth?.login();
@@ -64,25 +61,24 @@ export default function Login() {
     }
   };
 
-const saveUserInfo = async () => {
-  if (!user) return; // check if user is null
+  const saveUserInfo = async () => {
+    if (!user) return; // check if user is null
 
-  // Update the user document with the new user info
-  const userRef = doc(db, "users", user.uid);
+    // Update the user document with the new user info
+    const userRef = doc(db, "users", user.uid);
 
-  if (username) {
-    await updateDoc(userRef, "username", username);
-  }
+    if (username) {
+      await updateDoc(userRef, "username", username);
+    }
 
-  if (fullName) {
-    await updateDoc(userRef, "fullName", fullName);
-  }
+    if (fullName) {
+      await updateDoc(userRef, "fullName", fullName);
+    }
 
-  if (about) {
-    await updateDoc(userRef, "about", about);
-  }
-};
-
+    if (about) {
+      await updateDoc(userRef, "about", about);
+    }
+  };
 
   return (
     <div className="">
@@ -183,7 +179,9 @@ const saveUserInfo = async () => {
         ) : (
           <div>
             <p className={styles.explain}>
-             To proceed, please authenticate using your wallet by clicking on the button below. This will result in the creation of a user account for you in Firebase Auth and a document in Firestore."
+              To proceed, please authenticate using your wallet by clicking on
+              the button below. This will result in the creation of a user
+              account for you in Firebase Auth and a document in Firestore."
             </p>
             <ConnectWallet
               className="connect_wallet"
