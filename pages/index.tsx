@@ -27,7 +27,6 @@ export default function Login() {
   const [about, setAbout] = useState("");
 
 
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_PRIVATE_KEY);
  
 
   const signIn = async () => {
