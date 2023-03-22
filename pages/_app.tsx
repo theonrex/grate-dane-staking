@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
       authConfig={{
-        domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN as string,
+        domain: "https://web3-authentication-neon.vercel.app/",
       }}
     >
       <Component {...pageProps} />

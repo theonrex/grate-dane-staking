@@ -8,7 +8,7 @@ const login = async (req: NextApiRequest, res: NextApiResponse) => {
     const payload = req.body.payload;
 
     const { address, error } = await verifyLogin(
-      process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN as string,
+      "https://web3-authentication-neon.vercel.app/",
       payload
     );
     if (!address) {
