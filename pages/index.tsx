@@ -25,6 +25,11 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [fullName, setfullName] = useState("");
   const [about, setAbout] = useState("");
+
+
+  console.log(process.env.NEXT_PUBLIC_FIREBASE_PRIVATE_KEY);
+ 
+
   const signIn = async () => {
     // Use the same address as the one specified in _app.tsx.
     const payload = await thirdwebAuth?.login();
