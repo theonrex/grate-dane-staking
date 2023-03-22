@@ -8,11 +8,11 @@ export default function initializeFirebaseServer(): {
   db: Firestore;
   auth: Auth;
 } {
-  const clientEmail = process.env.NEXT_PUBLIC_FIREBASE_CLIENT_EMAIL;
+  const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
 
 const privateKey = process.env.MY_PRIVATE_VARIABLE;
 
-  const projectId = process.env.NEXT_PUBLIC_INIT_PROJECT_ID;
+  const projectId = process.env.INIT_PROJECT_ID;
 
   if (admin.apps.length === 0) {
     initializeApp({
