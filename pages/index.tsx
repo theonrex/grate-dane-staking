@@ -12,7 +12,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import styles from "../styles/Home.module.css";
-import useFirebaseUser from "../lib/useFirebaseUser";
+import firebaseUsers from "../lib/firebaseUsers";
 import useFirebaseDocument from "../lib/useFirebaseDocument";
 import HomeMarquee from "../components/HomeMarquee";
 
@@ -20,7 +20,7 @@ export default function Login() {
   const thirdwebAuth = useAuth();
   const address = useAddress();
   const { auth, db } = initializeFirebaseClient();
-  const { user, isLoading: loadingAuth } = useFirebaseUser();
+  const { user, isLoading: loadingAuth } = firebaseUsers();
   const { document, isLoading: loadingDocument } = useFirebaseDocument();
   const [username, setUsername] = useState("");
   const [fullName, setfullName] = useState("");
