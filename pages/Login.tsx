@@ -4,7 +4,7 @@ import React from "react";
 import initializeFirebaseClient from "../lib/initFirebase";
 import { getDoc, doc, serverTimestamp, setDoc } from "firebase/firestore";
 import styles from "../styles/Home.module.css";
-import useFirebaseUser from "../lib/useFirebaseUser";
+import useFirebaseUser from "../lib/firebaseUsers";
 import useFirebaseDocument from "../lib/useFirebaseDocument";
 import Image from "next/image";
 
