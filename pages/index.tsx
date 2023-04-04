@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import styles from "../styles/Home.module.css";
 import useFirebaseUser from "../lib/useFirebaseUser";
-import useFirebaseDocument from "../lib/useFirebaseUserDocument";
+import useFirebaseDocument from "../lib/useFirebaseDocument";
 import HomeMarquee from "../components/HomeMarquee";
 
 export default function Login() {

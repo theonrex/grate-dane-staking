@@ -5,7 +5,7 @@ import initializeFirebaseClient from "../lib/initFirebase";
 import { getDoc, doc, serverTimestamp, setDoc } from "firebase/firestore";
 import styles from "../styles/Home.module.css";
 import useFirebaseUser from "../lib/useFirebaseUser";
-import useFirebaseDocument from "../lib/useFirebaseUserDocument";
+import useFirebaseDocument from "../lib/useFirebaseDocument";
 import Image from "next/image";
 
 export default function Login() {
@@ -69,7 +69,7 @@ export default function Login() {
             height={100}
           /> */}
         </div>
-       
+
         <h1 className={styles.h1}>thirdweb + Firebase</h1>
 
         <p className={styles.explain}>
