@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap');
+
+body{
+  font-family: 'Kanit', sans-serif;
+}
 
 /* HomeBanner */
 .HomeBanner {
@@ -61,6 +66,7 @@
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
 
 .text_gradient {
   /** TEXT GRADIENT */
@@ -133,18 +139,22 @@
   background-image: linear-gradient(90deg, #009dff, #6220fb);
 }
 
-button:hover {
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-  padding-right: 30px;
-  padding-left: 30px;
-  background-image: linear-gradient(90deg, #0099ff, #bf00e5) !important;
-}
+// button:hover {
+//   cursor: pointer;
+//   transition: all 0.3s ease-in;
+//   padding-right: 30px;
+//   padding-left: 30px;
+//   background-image: linear-gradient(90deg, #0099ff, #bf00e5) !important;
+// }
 
 /* why us */
 
 .why_us {
   text-align: left;
+}
+
+.why_us h1 {
+   font-weight: 700;
 }
 
 .why_us .col50 {
@@ -219,6 +229,11 @@ button:hover {
   overflow: hidden;
   background-image: linear-gradient(90deg, #009dff3a, #6220fb23);
   box-shadow: 0px 0px 2px 2px #6220fb;
+}
+
+.gallery_div {
+    margin-bottom: 3em;
+
 }
 
 .gallery img {
@@ -297,11 +312,47 @@ button:hover {
   margin-bottom: 3em;
 }
 
+.galley_header h2{
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.galley_header span{
+  font-weight: 900;
+}
+
+// Whystake
+.Whystake {
+  text-align: left;
+}
+
+.why_us .Whystake header {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  color: #10a5e6;
+  background-image: -webkit-linear-gradient(45deg, #10a5e6 34%, #ff00ea 63%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding: 1em 0;
+  font-weight: 800;
+}
+
+.Whystake h2 {
+  font-size: 2em;
+  width: 70%;
+  line-height: 1.1em;
+  padding-bottom: 0.6em;
+}
+
 @media screen and (max-width: 1200px) {
   .home_h1 {
     font-size: 2.5em;
   }
-
+.why_us h1 {
+    text-align: center;
+    margin: auto;
+}
   .why_us .rowx {
     width: 100%;
     margin: auto;
@@ -334,6 +385,18 @@ button:hover {
   .WHyUSData {
     text-align: center;
   }
+
+  .why_us .Whystake {
+    text-align: center;
+  }
+
+  .Whystake h2 {
+  font-size: 2em;
+  width: 80%;
+  margin: auto;
+  line-height: 1.1em;
+  padding-bottom: 0.6em;
+}
 }
 
 @media screen and (max-width: 822px) {
@@ -374,7 +437,62 @@ button:hover {
     width: 90%;
     margin: auto;
   }
-  .nav_logo_name{
+  .nav_logo_name {
     display: none;
   }
+  .galley_header h2{
+  font-size: 2.2em;
+  padding-bottom:0.7em;
+}
+.galley_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width: 484px) {
+  .home_h1 {
+    font-size: 1.6em;
+    width: 100%;
+  }
+
+  .HomeBanner .banner_details {
+    width: 100%;
+  }
+  .home_btn button {
+    display: block;
+    margin: 2em auto !important;
+  }
+  .Why_Grate {
+    font-size: 1em;
+    text-align: center;
+  }
+  .why_us .col50 {
+    padding: 1.5em !important;
+  }
+  .why_us .WHyUSData {
+    width: 90%;
+    padding: 1em !important;
+    margin: 1em auto;
+  }
+  .why_us_data {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  // .galley_header h2 {
+  //   font-size: 1em;
+  // }
+
+  .Whystake h2 {
+    font-size: 1.8em;
+    width: 90%;
+    margin: auto;
+    line-height: 1.1em;
+    padding-bottom: 0.6em;
+}
 }

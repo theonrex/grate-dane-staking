@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 export default function WhyUs() {
   return (
     <div className="container HomeBanner">
@@ -10,7 +10,7 @@ export default function WhyUs() {
         </span>
       </p>
 
-      <h1 className="home_h1">
+      <h1 className="home_h1" data-aos="fade-up" data-aos-duration="3000">
         Faster, Cheaper and more Powerful
         <span> Staking.</span>
       </h1>
@@ -23,8 +23,13 @@ export default function WhyUs() {
       </p>
 
       <section className=" home_btn">
-        <button className="Staking_btn">Start Staking</button>
-        <button className="mining_btn">Start Minting</button>
+        <button className="Staking_btn">
+          {" "}
+          <Link href="/stake"> Start Staking</Link>{" "}
+        </button>
+        <button className="mining_btn">
+          <Link href="/mint"> Start Minting</Link>
+        </button>
       </section>
     </div>
   );

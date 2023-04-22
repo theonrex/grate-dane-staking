@@ -1,3 +1,4 @@
+// Nft_card
 .stake {
   padding-top: 3em;
   padding-bottom: 2em;
@@ -7,27 +8,81 @@
   font-weight: 400;
   margin: 0 2em;
   color: #fff;
-  -webkit-clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
-  clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  -webkit-clip-path: polygon(
+    0 16%,
+    14% 0,
+    14% 0,
+    100% 0,
+    100% 0,
+    100% 0,
+    100% 85%,
+    100% 85%,
+    85% 100%,
+    0 100%,
+    0 100%,
+    0 100%
+  );
+
+  clip-path: polygon(
+    0 16%,
+    14% 0,
+    14% 0,
+    100% 0,
+    100% 0,
+    100% 0,
+    100% 85%,
+    100% 85%,
+    85% 100%,
+    0 100%,
+    0 100%,
+    0 100%
+  );
   /* height: 400px; */
   transition: 0.2s 0.1s;
   border: 0 solid;
   padding: 1.3em;
   overflow: hidden;
-  background-image: linear-gradient(90deg, rgba(0, 157, 255, 0.2274509804), rgba(98, 32, 251, 0.137254902));
+  background-image: linear-gradient(90deg, #009dff3a, #6220fb23);
   box-shadow: 0px 0px 2px 2px #6220fb;
 }
 
 .Nft_card img {
   color: #fff;
-  -webkit-clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
-  clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  -webkit-clip-path: polygon(
+    0 16%,
+    14% 0,
+    14% 0,
+    100% 0,
+    100% 0,
+    100% 0,
+    100% 85%,
+    100% 85%,
+    85% 100%,
+    0 100%,
+    0 100%,
+    0 100%
+  );
+
+  clip-path: polygon(
+    0 16%,
+    14% 0,
+    14% 0,
+    100% 0,
+    100% 0,
+    100% 0,
+    100% 85%,
+    100% 85%,
+    85% 100%,
+    0 100%,
+    0 100%,
+    0 100%
+  );
   /* height: 400px; */
   transition: 0.2s 0.1s;
   border: 0 solid;
   padding: 1.3em;
   overflow: hidden;
-  background-image: linear-gradient(90deg, rgba(0, 157, 255, 0.2274509804), rgba(98, 32, 251, 0.137254902));
+  background-image: linear-gradient(90deg, #009dff3a, #6220fb23);
   box-shadow: 0px 0px 2px 2px #6220fb;
 }
 
@@ -38,10 +93,37 @@
 }
 
 /* nftBoxGrid */
+
 .nftBoxGrid {
   color: #fff;
-  -webkit-clip-path: polygon(0 12%, 0% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
-  clip-path: polygon(0 12%, 0% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  -webkit-clip-path: polygon(
+    0 12%,
+    0% 0,
+    14% 0,
+    100% 0,
+    100% 0,
+    100% 0,
+    100% 85%,
+    100% 85%,
+    85% 100%,
+    0 100%,
+    0 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 12%,
+    0% 0,
+    14% 0,
+    100% 0,
+    100% 0,
+    100% 0,
+    100% 85%,
+    100% 85%,
+    85% 100%,
+    0 100%,
+    0 100%,
+    0 100%
+  );
   /* height: 400px; */
   transition: 0.2s 0.1s;
   border: 0 solid;
@@ -103,9 +185,7 @@
   font-size: 1em;
   width: auto;
   text-transform: capitalize;
-  background-color: rgba(102, 0, 133, 0.1921568627);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  background-color: #66008531;
   width: fit-content;
   padding: 0.2em 0.6em;
   border-radius: 0.2em;
@@ -166,6 +246,7 @@
   display: flex;
   padding: 3em;
   margin: 2em 1em;
+
   flex-direction: column;
   align-items: flex-start;
   align-content: flex-start;
@@ -178,8 +259,8 @@
     padding: 0;
   }
   .Claimable_Rewards,
-.Current_Balance {
+  .Current_Balance {
     padding: 2em;
     margin: 1em auto;
   }
-}/*# sourceMappingURL=stake.css.map */
+}

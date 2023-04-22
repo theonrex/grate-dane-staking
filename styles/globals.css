@@ -18,6 +18,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.css-1184xw3:hover,
+.css-1184xw3:focus {
+  background-color: #008cdd !important;
+}
+
 html,
 body {
   background-color: #020406;
@@ -108,7 +113,6 @@ hr {
 h1 {
   margin: 0;
   padding: 0;
-  text-align: center;
   padding-bottom: 1em;
   font-size: 1.5em;
   padding-top: 2em;
@@ -117,15 +121,6 @@ h1 {
 }
 
 
-h2 {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  padding-bottom: 1em;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 
 svg {
   display: block;
@@ -142,7 +137,7 @@ img {
   margin: 2em auto 2em auto;
 }
 
-.HomeMarquee img{
+.HomeMarquee img {
   padding: 1em 2em;
 }
 
@@ -830,11 +825,7 @@ img {
 }
 
 
-@media screen and (max-width: 600px) {
-
-
-
-}
+@media screen and (max-width: 600px) {}
 
 @media screen and (min-width: 798px) {
 

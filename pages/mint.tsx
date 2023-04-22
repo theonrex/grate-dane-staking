@@ -1,7 +1,7 @@
 import { Web3Button } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { nftDropContractAddress } from "../constants/contractAddresses"
+import { nftDropContractAddress } from "../constants/contractAddresses";
 import styles from "../styles/Home.module.css";
 
 const Mint: NextPage = () => {
@@ -18,7 +18,7 @@ const Mint: NextPage = () => {
       <hr className={`${styles.smallDivider} ${styles.detailPageHr}`} />
 
       <Web3Button
-        theme="dark"
+        // theme="dark"
         contractAddress={nftDropContractAddress}
         action={(contract) => contract.erc721.claim(1)}
         onSuccess={() => {

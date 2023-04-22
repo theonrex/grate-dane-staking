@@ -17,6 +17,8 @@ import {
   stakingContractAddress,
   tokenContractAddress,
 } from "../constants/contractAddresses";
+import Link from "next/link";
+import { Spinner } from "flowbite-react";
 
 const Stake: NextPage = () => {
   const address = useAddress();
@@ -79,7 +81,15 @@ const Stake: NextPage = () => {
     await contract?.call("stake", id);
   }
   if (isLoading) {
-    return <div>Loading</div>;
+    return (
+      <div className="center ">
+        Loading{" "}
+        <span className="ml-3">
+          {" "}
+          <Spinner />
+        </span>{" "}
+      </div>
+    );
   }
 
   return (
@@ -126,40 +136,58 @@ const Stake: NextPage = () => {
 
           <hr className="" />
           <div className="your_stake_nfts_div">
-            <h2 className="your_stake_nfts">Your Staked NFTs</h2>
+            <h1 className="your_stake_nfts">Your Staked NFTs</h1>
             <div className="">
-              {stakedTokens &&
-                stakedTokens[0]?.map((stakedToken: BigNumber) => (
-                  <NFTCard
-                    tokenId={stakedToken.toNumber()}
-                    key={stakedToken.toString()}
-                  />
-                ))}
+              {stakedTokens && stakedTokens[0] != 0 ? (
+                <div>
+                  {stakedTokens &&
+                    stakedTokens[0]?.map((stakedToken: BigNumber) => (
+                      <NFTCard
+                        tokenId={stakedToken.toNumber()}
+                        key={stakedToken.toString()}
+                      />
+                    ))}
+                </div>
+              ) : (
+                "No Nfts Staked"
+              )}
             </div>
           </div>
 
           <hr className="" />
           <h1>Your Unstaked NFTs</h1>
           <div className="rowx">
-            {ownedNfts?.map((nft) => (
-              <div
-                className="col30 nftBoxGrid"
-                key={nft.metadata.id.toString()}
-              >
-                <ThirdwebNftMedia metadata={nft.metadata} className="" />
+            {ownedNfts ? (
+              <div>
+                {ownedNfts &&
+                  ownedNfts?.map((nft) => (
+                    <div
+                      className="col30 nftBoxGrid"
+                      key={nft.metadata.id.toString()}
+                    >
+                      <ThirdwebNftMedia metadata={nft.metadata} className="" />
 
-                <h4>#{nft.metadata.id}</h4>
-                <h3>{nft.metadata.name}</h3>
-                <p>{nft.metadata.description}</p>
-                <Web3Button
-                  contractAddress={stakingContractAddress}
-                  action={() => stakeNft(nft.metadata.id)}
-                  className="Web3Button_stake"
-                >
-                  {approved === true ? "Stake" : "Approve"}
-                </Web3Button>
+                      <h4>#{nft.metadata.id}</h4>
+                      <h3>{nft.metadata.name}</h3>
+                      <p>{nft.metadata.description}</p>
+                      <Web3Button
+                        contractAddress={stakingContractAddress}
+                        action={() => stakeNft(nft.metadata.id)}
+                        className="Web3Button_stake"
+                      >
+                        {approved === true ? "Stake" : "Approve"}
+                      </Web3Button>
+                    </div>
+                  ))}
               </div>
-            ))}
+            ) : (
+              <div>
+                <p>No Nfts to Stake</p>
+                <button className="mining_btn">
+                  <Link href="/mint"> Start Minting</Link>
+                </button>{" "}
+              </div>
+            )}
           </div>
         </>
       )}
@@ -168,53 +196,3 @@ const Stake: NextPage = () => {
 };
 
 export default Stake;
-
-// // Check if user has any ERC721 Tokens Staked and if they tried to withdraw,
-// // calculate the rewards and store them in the unclaimedRewards
-// // decrement the amountStaked of the user and transfer the ERC721 token back to them
-// function withdraw(uint256 _tokenId) external nonReentrant {
-//     // Make sure the user has at least one token staked before withdrawing
-//     require(
-//         stakers[msg.sender].amountStaked > 0,
-//         "You have no tokens staked"
-//     );
-
-//     // Wallet must own the token they are trying to withdraw
-//     require(
-//         stakerAddress[_tokenId] == msg.sender,
-//         "You don't own this token!"
-//     );
-
-//     // Update the rewards for this user, as the amount of rewards decreases with less tokens.
-//     uint256 rewards = calculateRewards(msg.sender);
-//     stakers[msg.sender].unclaimedRewards += rewards;
-
-//     // Find the index of this token id in the stakedTokens array
-//     uint256 index = 0;
-//     for (uint256 i = 0; i < stakers[msg.sender].stakedTokens.length; i++) {
-//         if (
-//             stakers[msg.sender].stakedTokens[i].tokenId == _tokenId &&
-//             stakers[msg.sender].stakedTokens[i].staker != address(0)
-//         ) {
-//             index = i;
-//             break;
-//         }
-//     }
-
-//     // Set this token's .staker to be address 0 to mark it as no longer staked
-//     stakers[msg.sender].stakedTokens[index].staker = address(0);
-
-//     // Decrement the amount staked for this wallet
-//     stakers[msg.sender].amountStaked--;
-
-//     // Update the mapping of the tokenId to the be address(0) to indicate that the token is no longer staked
-//     stakerAddress[_tokenId] = address(0);
-
-//     // Transfer the token back to the withdrawer
-//     nftCollection.transferFrom(address(this), msg.sender, _tokenId);
-
-//     // Update the timeOfLastUpdate for the withdrawer
-//     stakers[msg.sender].timeOfLastUpdate = block.timestamp;
-// }
-
-////////////////////

@@ -21,7 +21,7 @@ const NFTCard: FC<NFTCardProps> = ({ tokenId }) => {
 
   return (
     <div className="col30 nftBoxGrid">
-      {nft && (
+      {nft ? (
         <div className=" ">
           {nft.metadata && (
             <ThirdwebNftMedia
@@ -40,7 +40,7 @@ const NFTCard: FC<NFTCardProps> = ({ tokenId }) => {
             Withdraw
           </Web3Button>
         </div>
-      )}
+      ) : "No Nfts Staked" }
     </div>
   );
 };

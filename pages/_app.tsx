@@ -1,19 +1,30 @@
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
+import Head from "next/head";
+
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
 import "../styles/home.css";
 import "../styles/stake.css";
 // import "flowbite";
 import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { polygonMumbai } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import Navbar from "../components/Navbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Footer from "../components/Footer";
 // This is the chain your dApp will work on.
 const activeChain = ChainId.Mumbai;
 
+// Configure the blockchain providers and chains to use
 const { chains, provider } = configureChains(
   [polygonMumbai], // Use the Polygon Mumbai test network
   // [publicProvider()] // Use a public provider to connect to the network
@@ -23,7 +34,7 @@ const { chains, provider } = configureChains(
       // Check if the chain ID matches the Polygon Mumbai test network
       rpc: (chain) => {
         if (chain.id !== polygonMumbai.id) return null;
-        return { http: chain.rpcUrls.default };
+        return { http: `${chain.rpcUrls.default}` };
       },
     }),
   ]
@@ -43,6 +54,28 @@ const wagmiClient = createClient({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init({
+      // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: "aos-init", // class applied after initialization
+      animatedClassName: "aos-animate", // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+      offset: 120, // offset (in px) from the original trigger point
+      delay: 0, // values from 0 to 3000, with step 50ms
+      duration: 400, // values from 0 to 3000, with step 50ms
+      easing: "ease", // default easing for AOS animations
+      once: false, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+      anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+    });
+  }, []);
   return (
     <ThirdwebProvider
       activeChain={activeChain}
@@ -52,10 +85,27 @@ function MyApp({ Component, pageProps }: AppProps) {
     >
       <WagmiConfig client={wagmiClient}>
         {/* Set up the RainbowKit provider for the app */}
-        <RainbowKitProvider chains={chains}>
+        <RainbowKitProvider
+          chains={chains}
+          theme={darkTheme({
+            accentColor: "#7b3fe4",
+            accentColorForeground: "white",
+            borderRadius: "small",
+            fontStack: "system",
+            overlayBlur: "small",
+          })}
+        >
           {/* Render the specified component with its page props */}
+          <Head>
+            <meta
+              name="description"
+              content="Welcome to Theon-X, your go-to source for all things Blockchain. Our website is designed to provide you with everything you need to stay up-to-date on the world of digital currencies, from real-time price updates to the latest news and articles."
+            />
+            <link rel="shortcut icon" href="favicon.png" />
+            <title> Great Dane</title>
+          </Head>{" "}
           <Navbar />
-          <Component {...pageProps} />{" "}
+          <Component {...pageProps} /> <Footer />
         </RainbowKitProvider>
       </WagmiConfig>
     </ThirdwebProvider>

@@ -1,41 +1,39 @@
 import React from "react";
-
+import Link from "next/link";
+import NFTIMG from "../../public/media/Amy  Seven Riches_ Four Churches 4 of 19.png"
+import Image from "next/image";
 export default function Whystake() {
   return (
-    <div className="container why_us ">
+    <div
+      className="container why_us "
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <div className="rowx">
-        <section className="effect col50">
+        <section className=" col50">
           <div></div>
-          <h1 className="text_gradient">Why Grate Dane Ai</h1>
-
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-            eveniet laboriosam odit delectus dolor id est, consequatur in
-            voluptatum, dolorum non quaerat quam perferendis? Cupiditate eos
-            quod reiciendis qui illo? Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Quae eveniet laboriosam odit delectus dolor id
-            est, consequatur in voluptatum, dolorum non quaerat quam
-            perferendis? Cupiditate eos quod reiciendis qui illo?
-          </p>
+          <Image src={NFTIMG} alt="nft" width={400} />
         </section>
-        <section className=" col50 features">
+        <section className=" col50 Whystake">
           <div className=" effect  ">
             <div className="">
-              <header>WHy stake GREATE DANE AI NFTS</header>
+              <header>Why stake GREATE DANE AI NFTS</header>
               <h2>
                 Stake Your $GTE for <span>Passive Income</span>
               </h2>
 
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Quaerat quidem quod repellendus, assumenda ratione blanditiis
-                magnam excepturi labore, veritatis dolores commodi deserunt
-                ipsum voluptates laboriosam ut praesentium, iste autem eum.
+              <p className="pb-4">
+                Portraits Of Soldiers And Citizens”. Enjoy This One Of A Kind,
+                AI Generated NFT Collection Created To The Highest Standards. Be
+                The One Of The Select To Discover The Magic Of Great Dane AI.
+                Mint And Stake Your NFT Now! Surprising Every Time, Quality
+                Craftsmanship Is Yours To Discover…
               </p>
-
-              <h5 className="ml-2 text_gradient">Low Fee</h5>
             </div>
-            <button className="gallery_btn">Start Staking</button>{" "}
+            <button className="gallery_btn">
+              <Link href="/mint"> Start Staking</Link>
+            </button>{" "}
           </div>
         </section>
       </div>
