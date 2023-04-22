@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+/* HomeBanner */
+.HomeBanner {
+  padding-top: 3em;
+  text-align: center;
+}
+
+.home_Banner_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.down_icon img {
+  width: 20px;
+  margin: 0 0.5em;
+}
+
+.HomeBanner .banner_details {
+  width: 60%;
+  margin: auto;
+}
+
+.effect {
+  backdrop-filter: blur(4px) saturate(152%);
+  -webkit-backdrop-filter: blur(4px) saturate(152%);
+  background-color: rgba(2, 4, 8, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  /* width: fit-content; */
+  padding: 1em;
+  margin: 0 auto;
+}
+
+.home_effect {
+  backdrop-filter: blur(4px) saturate(152%);
+  -webkit-backdrop-filter: blur(4px) saturate(152%);
+  background-color: rgba(2, 4, 8, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+.home_h1 {
+  font-size: 4em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  font-family: "Bruno Ace", cursive;
+}
+
+.home_h1 span {
+  /** TEXT GRADIENT */
+  color: #10a5e6;
+  background-image: -webkit-linear-gradient(45deg, #10a5e6 34%, #ff00ea 63%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.text_gradient {
+  /** TEXT GRADIENT */
+  color: #10a5e6;
+  background-image: -webkit-linear-gradient(45deg, #10a5e6 34%, #ff00ea 63%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding: 1em 0;
+}
+
+.home_btn {
+  margin: 2em auto;
+}
+
+.home_btn .Staking_btn {
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 2em;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  height: 40px;
+  font-size: 0.7rem;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: 0.2s 0.1s;
+  background-image: linear-gradient(90deg, #009dff, #6220fb);
+  border: 0 solid;
+  overflow: hidden;
+}
+
+.home_btn .Staking_btn:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.home_btn .mining_btn {
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 2em;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  /* -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%); */
+  /* clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%); */
+  height: 40px;
+  font-size: 0.7rem;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: 0.2s 0.1s;
+  border: 0 solid;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(0, 157, 255, 0.2274509804), rgba(98, 32, 251, 0.137254902));
+  box-shadow: 0px 0px 2px 2px #6220fb;
+}
+
+.home_btn .mining_btn:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-image: linear-gradient(90deg, #009dff, #6220fb);
+}
+
+button:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-image: linear-gradient(90deg, #0099ff, #bf00e5) !important;
+}
+
+/* why us */
+.why_us {
+  text-align: left;
+}
+
+.why_us .col50 {
+  text-align: left;
+  padding-bottom: 2em !important;
+  margin: 0.5em;
+}
+
+.features .WHyUSData {
+  margin: 0 1em 1em auto;
+}
+
+.why_us_data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.why_us_data img {
+  width: 45px;
+  margin: 0;
+  backdrop-filter: blur(4px) saturate(152%);
+  -webkit-backdrop-filter: blur(4px) saturate(152%);
+  background-color: rgba(2, 4, 8, 0.41);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 0.4em;
+}
+
+/* gallery */
+.gallery .gallery_div div {
+  font-weight: 400;
+  margin: 0 2em;
+  color: #fff;
+  -webkit-clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  /* height: 400px; */
+  transition: 0.2s 0.1s;
+  border: 0 solid;
+  padding: 1.3em;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(0, 157, 255, 0.2274509804), rgba(98, 32, 251, 0.137254902));
+  box-shadow: 0px 0px 2px 2px #6220fb;
+}
+
+.gallery img {
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  -webkit-clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  clip-path: polygon(0 16%, 14% 0, 14% 0, 100% 0, 100% 0, 100% 0, 100% 85%, 100% 85%, 85% 100%, 0 100%, 0 100%, 0 100%);
+  /* height: 400px; */
+  transition: 0.2s 0.1s;
+  border: 0 solid;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(0, 157, 255, 0.2274509804), rgba(98, 32, 251, 0.137254902));
+  box-shadow: 0px 0px 2px 2px #6220fb;
+}
+
+.gallery__mg {
+  margin: 7em auto;
+}
+
+.gallery_btn {
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  /* -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%); */
+  /* clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%); */
+  height: 40px;
+  font-size: 0.7rem;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: 0.2s 0.1s;
+  border: 0 solid;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(0, 157, 255, 0.2274509804), rgba(98, 32, 251, 0.137254902));
+  box-shadow: 0px 0px 2px 2px #6220fb;
+}
+
+.galley_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+@media screen and (max-width: 1200px) {
+  .home_h1 {
+    font-size: 2.5em;
+  }
+  .why_us .rowx {
+    width: 100%;
+    margin: auto;
+  }
+  .why_us .col50 {
+    padding: 3em !important;
+  }
+  .Why_Grate {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .WHyUSData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .features {
+    width: 100%;
+    margin: auto;
+  }
+  .why_us .WHyUSData {
+    width: 45%;
+    padding: 2em !important;
+    margin: 1em;
+  }
+  .WHyUSData {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 822px) {
+  .why_us .WHyUSData {
+    width: 80%;
+    padding: 2em !important;
+    margin: 1em auto;
+  }
+  .features {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 750px) {
+  .home_h1 {
+    font-size: 2.5em;
+    width: 100%;
+    padding: 0.5em 0;
+  }
+  .HomeBanner .banner_details {
+    width: 90%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 518px) {
+  .home_h1 {
+    font-size: 2em;
+    width: 100%;
+  }
+  .HomeBanner .banner_details {
+    width: 90%;
+    margin: auto;
+  }
+  .nav_logo_name {
+    display: none;
+  }
+}/*# sourceMappingURL=home.css.map */

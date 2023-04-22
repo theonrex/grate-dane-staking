@@ -9,8 +9,8 @@ import Image from "next/image";
 
 export default function HomeMarquee() {
   return (
-    <div className="HomeMarquee container">
-      <Marquee gradientWidth={10}>
+    <div className="HomeMarquee ">
+      <Marquee gradientWidth={0}>
         <Image src={Metamask} alt="Metamask image" width={300} />
         <Image src={CoinBase} alt="CoinBase image" width={300} />
         <Image src={Thirdweb} alt="Thirdweb image" width={300} />

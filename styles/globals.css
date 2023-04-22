@@ -1,4 +1,6 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 :root {
@@ -18,24 +20,44 @@ html {
 
 html,
 body {
-  background-color: var(--white);
-  padding: 0;
-  margin: 0;
+  background-color: #020406;
+  background-repeat: no-repeat !important;
+  background-image:
+    radial-gradient(at 47% 33%, hsl(267.15, 94%, 19%) 0, transparent 59%),
+    radial-gradient(at 82% 65%, hsl(283.44, 93%, 5%) 0, transparent 55%);
+  background-size: cover !important;
+  color: white;
   font-family: var(--font-family);
+}
+
+.rowx {
+  display: table;
+  width: 100%;
+}
+
+.col50 {
+  width: 45%;
+  float: left;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-.rowx{
+
+.rowx {
   display: table;
 }
 
-.col50{
-  width: 50%;
+.col25 {
+  width: 45%;
   float: left;
-  padding: 2em;
+}
+
+.col30 {
+  width: 28%;
+  float: left;
+  padding: 1em;
 }
 
 label {
@@ -50,7 +72,7 @@ input[type="tel"],
 textarea {
   display: block;
   width: 100%;
-  padding:  0.5rem 0;
+  padding: 0.5rem 0;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
@@ -69,7 +91,7 @@ textarea:focus {
 }
 
 
-p{
+p {
   margin-bottom: 1em;
   text-transform: capitalize;
 }
@@ -110,14 +132,20 @@ svg {
   font-size: 30px;
   height: 100%;
 }
-img{
-  margin: auto 1em;
+
+img {
+  margin: auto;
 }
 
 /* GLOBAL */
-.HomeMarquee{
- margin:0 auto 2em auto; 
+.HomeMarquee {
+  margin: 2em auto 2em auto;
 }
+
+.HomeMarquee img{
+  padding: 1em 2em;
+}
+
 .container {
   max-width: 1398px;
   margin: 0 auto;
@@ -189,9 +217,9 @@ img{
 }
 
 /* BUTTONS */
-.connect_wallet{
+.connect_wallet {
   width: 22% !important;
-  margin:1em auto 4em;
+  margin: 1em auto 4em;
 }
 
 .save_user_details {
@@ -264,7 +292,7 @@ img{
   cursor: pointer;
   font-size: 18px;
   width: 100%;
-  margin:1em auto 4em;
+  margin: 1em auto 4em;
   padding: 10px 16px;
 }
 
@@ -787,30 +815,29 @@ img{
 
 
 @media screen and (max-width: 1200px) {
-  .col50{
+
+  .col50,
+  .col25,
+  .col30 {
     width: 100%;
   }
-  
- 
+
+
 }
- img{
-    height: auto;
-    padding-top: 3em;
-  }
- 
+
+img {
+  height: auto;
+}
+
 
 @media screen and (max-width: 600px) {
 
-   img{
-    width: 100px !important;
-    height: auto;
-    padding-top: 3em;
-  }
- 
+
+
 }
 
 @media screen and (min-width: 798px) {
- 
+
   .wrapper {
     flex-direction: row;
     justify-content: space-between;

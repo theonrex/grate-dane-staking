@@ -1,0 +1,17 @@
+{
+  "name": "hardhat-javascript-starter",
+  "scripts": {
+    "build": "npx thirdweb@latest detect",
+    "deploy": "npx thirdweb@latest deploy",
+    "release": "npx thirdweb@latest release"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "hardhat": "^2.10.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
+    "@thirdweb-dev/contracts": "^3",
+    "dotenv": "^16.0.3"
+  }
+}
