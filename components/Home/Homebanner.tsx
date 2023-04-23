@@ -28,7 +28,10 @@ export default function WhyUs() {
           <Link href="/stake"> Start Staking</Link>{" "}
         </button>
         <button className="mining_btn">
-          <Link href="/mint"> Start Minting</Link>
+          <Link href="http://Greatdaneai.com" target="_blank">
+            {" "}
+            Start Minting
+          </Link>
         </button>
       </section>
     </div>

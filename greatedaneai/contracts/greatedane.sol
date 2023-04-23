@@ -33,10 +33,10 @@ contract GreateDaneStaking is ReentrancyGuard {
     }
 
     // Rewards per hour per token deposited in wei.
-    uint256 private rewardsPerHour = 100000;
+    uint256 private rewardsPerHour = 300000000000000000000;
 
     // Reward token per time in seconds
-    uint256 private rewardTokenPerTime = 3600;
+    uint256 private rewardTokenPerTime = 86400;
 
     // Event that is emitted when the owner updates the rewardsPerHour and rewardTokenPerTime
     event RewardsPerHourUpdated(

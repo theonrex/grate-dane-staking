@@ -16,7 +16,6 @@ module.exports = {
     mumbai: {
       chainId: 80001,
       url: ``,
-      accounts: [process.env.PRIVATE_KEY],
     },
   },
   etherscan: {

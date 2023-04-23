@@ -31,7 +31,10 @@ const Stake: NextPage = () => {
     "token"
   );
   const { contract, isLoading } = useContract(stakingContractAddress);
-  const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
+  const { data: ownedNfts } = useOwnedNFTs(
+    nftDropContract,
+    "0x6a6fD7bE7378045c639f642614FdCDD2ABEfd996"
+  );
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
   const { data: stakedTokens } = useContractRead(
@@ -184,7 +187,13 @@ const Stake: NextPage = () => {
               <div>
                 <p>No Nfts to Stake</p>
                 <button className="mining_btn">
-                  <Link href="/mint"> Start Minting</Link>
+                  <Link
+                    href="http://Greatdaneai.com"
+                    target="_blank"
+                  >
+                    {" "}
+                    Start Minting
+                  </Link>
                 </button>{" "}
               </div>
             )}

@@ -24,7 +24,6 @@ export const WHyUSData = [
 ];
 
 export default function WhyUs() {
-  console.log(WHyUSData);
   return (
     <div className="container why_us ">
       <div className="rowx">
