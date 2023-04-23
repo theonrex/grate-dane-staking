@@ -39,7 +39,7 @@ export default function WhyUs() {
             Yours To Discover…
           </p>
         </section>
-        <section className=" col50 features" data-aos="fade-left">
+        <section className=" col50 features" >
           {WHyUSData
             ? WHyUSData.map((data, index) => {
                 return (
