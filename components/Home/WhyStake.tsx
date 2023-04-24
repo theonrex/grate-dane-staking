@@ -32,7 +32,7 @@ export default function Whystake() {
               </p>
             </div>
             <button className="gallery_btn">
-              <Link href="/mint"> Start Staking</Link>
+              <Link href="/stake"> Start Staking</Link>
             </button>{" "}
           </div>
         </section>

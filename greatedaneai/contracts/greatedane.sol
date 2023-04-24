@@ -193,42 +193,6 @@ contract GreateDaneStaking is ReentrancyGuard {
         ) * rewardsPerHour) / rewardTokenPerTime);
     }
 
-    // function withdraw(uint256 _tokenId) external nonReentrant {
-    //     require(
-    //         stakers[msg.sender].amountStaked > 0,
-    //         "You have no tokens staked"
-    //     );
-
-    //     require(
-    //         stakerAddress[_tokenId] == msg.sender,
-    //         "You don't own this token!"
-    //     );
-
-    //     uint256 rewards = calculateRewards(msg.sender);
-    //     require(rewards > 0, "No rewards to claim");
-
-    //     stakers[msg.sender].unclaimedRewards += rewards;
-
-    //     uint256 index = 0;
-    //     for (uint256 i = 0; i < stakers[msg.sender].stakedTokens.length; i++) {
-    //         if (
-    //             stakers[msg.sender].stakedTokens[i].tokenId == _tokenId &&
-    //             stakers[msg.sender].stakedTokens[i].staker != address(0)
-    //         ) {
-    //             index = i;
-    //             break;
-    //         }
-    //     }
-
-    //     require(index > 0, "Token not found");
-
-    //     stakers[msg.sender].stakedTokens[index].staker = address(0);
-    //     stakers[msg.sender].amountStaked--;
-    //     stakerAddress[_tokenId] = address(0);
-    //     nftCollection.transferFrom(address(this), msg.sender, _tokenId);
-    //     stakers[msg.sender].timeOfLastUpdate = block.timestamp;
-    // }
-
     // Check if user has any ERC721 Tokens Staked and if they tried to withdraw,
     // calculate the rewards and store them in the unclaimedRewards
     // decrement the amountStaked of the user and transfer the ERC721 token back to them
@@ -281,6 +245,9 @@ contract GreateDaneStaking is ReentrancyGuard {
     }
 
     //transfer
+    function getOwner() public view returns (address) {
+        return owner;
+    }
 
     function transferOwnership(address newOwner) external onlyOwner {
         require(

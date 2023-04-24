@@ -1,7 +1,7 @@
 export const nftDropContractAddress = "0x23E4081CD2b218B18be74cC903bbd6579A863495";
-export const tokenContractAddress = "0xE4b68af4ddF27F1Be9c3bA293ca851610cD6A89D";
-export const stakingContractAddress = "0x0E8b00113E6534Fc1C1F69A2e0a2af267091A94E";
-//0x0E8b00113E6534Fc1C1F69A2e0a2af267091A94E
+export const tokenContractAddress = "0xbA0250a138a365327fd4177D0Ecb6287E1bC3Ca7";
+export const stakingContractAddress = "0x1b27Cbf1032533a55f7FC09e36b3A30e5C6E6198";
+//0xbA0250a138a365327fd4177D0Ecb6287E1bC3Ca7
 export const NFT_STAKING_CONTRACT_ABI = [
   {
     inputs: [

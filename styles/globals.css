@@ -32,7 +32,6 @@ body {
     radial-gradient(at 82% 65%, hsl(283.44, 93%, 5%) 0, transparent 55%);
   background-size: cover !important;
   color: white;
-  font-family: var(--font-family);
 }
 
 .rowx {

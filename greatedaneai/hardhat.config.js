@@ -15,7 +15,7 @@ module.exports = {
     hardhat: {},
     mumbai: {
       chainId: 80001,
-      url: ``,
+      url: `https://rpc.ankr.com/polygon`,
     },
   },
   etherscan: {
