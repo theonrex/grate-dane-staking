@@ -40,7 +40,6 @@ const Stake: NextPage = () => {
     address
   );
 
-  
   const [approved, setApproved] = useState(true);
 
   // console.log("claimableRewards", claimableRewards?.toString());
@@ -141,7 +140,7 @@ const Stake: NextPage = () => {
           <div className="your_stake_nfts_div">
             <h1 className="your_stake_nfts">Your Staked NFTs</h1>
             <div className="">
-              {stakedTokens && stakedTokens[0] >= 0 ? (
+              {stakedTokens && stakedTokens !== 0 ? (
                 <div>
                   {stakedTokens &&
                     stakedTokens[0]?.map((stakedToken: BigNumber) => (
