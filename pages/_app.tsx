@@ -15,25 +15,25 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
-import { polygonMumbai } from "wagmi/chains";
+import { polygon } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import Navbar from "../components/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../components/Footer";
 // This is the chain your dApp will work on.
-const activeChain = ChainId.Mumbai;
+const activeChain = ChainId.Polygon;
 
 // Configure the blockchain providers and chains to use
 const { chains, provider } = configureChains(
-  [polygonMumbai], // Use the Polygon Mumbai test network
+  [polygon], // Use the Polygon Mumbai test network
   // [publicProvider()] // Use a public provider to connect to the network
   [
     // Use a JSON-RPC provider to connect to the network
     jsonRpcProvider({
       // Check if the chain ID matches the Polygon Mumbai test network
       rpc: (chain) => {
-        if (chain.id !== polygonMumbai.id) return null;
+        if (chain.id !== polygon.id) return null;
         return { http: `${chain.rpcUrls.default}` };
       },
     }),
