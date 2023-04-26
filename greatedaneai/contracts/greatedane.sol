@@ -33,16 +33,15 @@ contract GreateDaneStaking is ReentrancyGuard {
     }
 
     // Rewards per hour per token deposited in wei.
-    uint256 private rewardsPerHour = 300000000000000000000;
+    uint256 private rewardsPerHour = 30000;
 
     // Reward token per time in seconds
-    uint256 private rewardTokenPerTime = 86400;
+    uint256 private rewardTokenPerTime = 400;
 
     // Event that is emitted when the owner updates the rewardsPerHour and rewardTokenPerTime
-    event RewardsPerHourUpdated(
-        uint256 newRewardsPerHour,
-        uint256 newRewardTokenPerTime
-    );
+    event RewardsPerHourUpdated(uint256 newRewardsPerHour);
+
+    event eRewardTokenPerTime(uint256 newRewardTokenPerTime);
 
     // Mapping of User Address to Staker info
     mapping(address => Staker) public stakers;
@@ -159,14 +158,12 @@ contract GreateDaneStaking is ReentrancyGuard {
 
     /////
 
-    // Function to update the rewardsPerHour and rewardTokenPerTime
-    function updateRewardsPerHour(
-        uint256 _newRewardsPerHour,
-        uint256 _newRewardTokenPerTime
-    ) external onlyOwner {
-        rewardsPerHour = _newRewardsPerHour;
-        rewardTokenPerTime = _newRewardTokenPerTime;
-        emit RewardsPerHourUpdated(_newRewardsPerHour, _newRewardTokenPerTime);
+    function getRewardsPerHour() external view returns (uint256) {
+        return rewardsPerHour;
+    }
+
+    function getRewardTokenPerTime() external view returns (uint256) {
+        return rewardTokenPerTime;
     }
 
     // Only the owner can call this function to update the rewards per hour
@@ -174,6 +171,7 @@ contract GreateDaneStaking is ReentrancyGuard {
         uint256 _newRewardsPerHour
     ) external onlyOwner {
         rewardsPerHour = _newRewardsPerHour;
+        emit RewardsPerHourUpdated(_newRewardsPerHour);
     }
 
     // Only the owner can call this function to update the reward token per time
@@ -181,6 +179,7 @@ contract GreateDaneStaking is ReentrancyGuard {
         uint256 _newRewardTokenPerTime
     ) external onlyOwner {
         rewardTokenPerTime = _newRewardTokenPerTime;
+        emit RewardsPerHourUpdated(_newRewardTokenPerTime);
     }
 
     // Function to calculate rewards

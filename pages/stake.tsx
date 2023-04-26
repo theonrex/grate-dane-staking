@@ -39,16 +39,19 @@ const Stake: NextPage = () => {
     "getStakeInfo",
     address
   );
-  const [approved, setApproved] = useState(false);
 
-  // console.log(stakedTokens);
+  
+  const [approved, setApproved] = useState(true);
+
+  // console.log("claimableRewards", claimableRewards?.toString());
 
   useEffect(() => {
     if (!contract || !address) return;
 
     async function loadClaimableRewards() {
-      const stakeInfo = await contract?.call("getStakeInfo", address);
-      setClaimableRewards(stakeInfo[1]);
+      const stakeInfo = await contract?.call("availableRewards", address);
+      setClaimableRewards(stakeInfo);
+      console.log("claimableRewards", stakeInfo);
     }
 
     loadClaimableRewards();
@@ -76,7 +79,7 @@ const Stake: NextPage = () => {
     );
     if (!isApproved) {
       await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
-      setApproved(true);
+      setApproved(false);
     }
     await contract?.call("stake", id);
   }
@@ -138,7 +141,7 @@ const Stake: NextPage = () => {
           <div className="your_stake_nfts_div">
             <h1 className="your_stake_nfts">Your Staked NFTs</h1>
             <div className="">
-              {stakedTokens && stakedTokens[0] != 0 ? (
+              {stakedTokens && stakedTokens[0] >= 0 ? (
                 <div>
                   {stakedTokens &&
                     stakedTokens[0]?.map((stakedToken: BigNumber) => (
