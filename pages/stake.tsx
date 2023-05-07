@@ -37,7 +37,7 @@ const Stake: NextPage = () => {
   const { data: stakedTokens } = useContractRead(
     contract,
     "getStakeInfo",
-    address
+    [address]
   );
 
   const [approved, setApproved] = useState(true);
@@ -48,7 +48,7 @@ const Stake: NextPage = () => {
     if (!contract || !address) return;
 
     async function loadClaimableRewards() {
-      const stakeInfo = await contract?.call("availableRewards", address);
+      const stakeInfo = await contract?.call("availableRewards", [address]);
       setClaimableRewards(stakeInfo);
       console.log("claimableRewards", stakeInfo);
     }
@@ -80,7 +80,7 @@ const Stake: NextPage = () => {
       await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
       setApproved(false);
     }
-    await contract?.call("stake", id);
+    await contract?.call("stake", [id]);
   }
   if (isLoading) {
     return (

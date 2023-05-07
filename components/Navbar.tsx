@@ -3,10 +3,7 @@ import "flowbite";
 import Image from "next/image";
 import Logo from "../public/media/logo.png";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import {
-
-  Web3Button,
-} from "@thirdweb-dev/react";
+import { Web3Button } from "@thirdweb-dev/react";
 import Link from "next/link";
 export default function Navbar() {
   return (
@@ -74,7 +71,7 @@ export default function Navbar() {
             </li> */}
             <li>
               <Link
-                href="http://Greatdaneai.com"
+                href="/mint"
                 target="_blank"
                 className="block py-2 pl-3 pr-4 text-white rounded hover:bg-blue-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >

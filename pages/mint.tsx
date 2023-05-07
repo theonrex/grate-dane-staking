@@ -11,10 +11,6 @@ const Mint: NextPage = () => {
     <div className={styles.container}>
       <h1 className={styles.h1}>Mint An NFT!</h1>
 
-      <p className={styles.explain}>
-        Here is where we use our <b>NFT Drop</b> contract to allow users to mint
-        one of the NFTs that we lazy minted.
-      </p>
       <hr className={`${styles.smallDivider} ${styles.detailPageHr}`} />
 
       <Web3Button
@@ -26,7 +22,7 @@ const Mint: NextPage = () => {
           router.push("/stake");
         }}
         onError={(error) => {
-          alert(error);
+          console.log(error);
         }}
       >
         Claim An NFT
