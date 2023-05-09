@@ -131,6 +131,10 @@ img {
   margin: auto;
 }
 
+.css-1r8mtug img{
+  margin: unset !important;
+}
+
 /* GLOBAL */
 .HomeMarquee {
   margin: 2em auto 2em auto;

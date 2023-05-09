@@ -15,25 +15,25 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
-import { polygonMumbai } from "wagmi/chains";
+import { polygon } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import Navbar from "../components/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../components/Footer";
 // This is the chain your dApp will work on.
-const activeChain = ChainId.Mumbai;
+const activeChain = ChainId.Polygon;
 
 // Configure the blockchain providers and chains to use
 const { chains, provider } = configureChains(
-  [polygonMumbai], // Use the Polygon Mumbai test network
+  [polygon], // Use the Polygon  test network
   // [publicProvider()] // Use a public provider to connect to the network
   [
     // Use a JSON-RPC provider to connect to the network
     jsonRpcProvider({
-      // Check if the chain ID matches the Polygon Mumbai test network
+      // Check if the chain ID matches the Polygon  test network
       rpc: (chain) => {
-        if (chain.id !== polygonMumbai.id) return null;
+        if (chain.id !== polygon.id) return null;
         return { http: `${chain.rpcUrls.default}` };
       },
     }),
@@ -42,7 +42,7 @@ const { chains, provider } = configureChains(
 
 // Get the default wallets for the specified chains
 const { connectors } = getDefaultWallets({
-  appName: "Wagmi Tutorial", // Specify the name of the app
+  appName: "GrateDane", // Specify the name of the app
   chains, // Use the configured chains
 });
 
@@ -76,9 +76,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
     });
   }, []);
+
   return (
-    <ThirdwebProvider activeChain={activeChain}>
-      <WagmiConfig client={wagmiClient}>
+    <WagmiConfig client={wagmiClient}>
+      <ThirdwebProvider activeChain={activeChain}>
         {/* Set up the RainbowKit provider for the app */}
         <RainbowKitProvider
           chains={chains}
@@ -100,10 +101,11 @@ function MyApp({ Component, pageProps }: AppProps) {
             <title> Great Dane</title>
           </Head>{" "}
           <Navbar />
-          <Component {...pageProps} /> <Footer />
+          <Component {...pageProps} />
+          <Footer />
         </RainbowKitProvider>
-      </WagmiConfig>
-    </ThirdwebProvider>
+      </ThirdwebProvider>
+    </WagmiConfig>
   );
 }
 

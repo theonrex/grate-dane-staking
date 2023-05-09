@@ -4,6 +4,10 @@ body {
   font-family: "Kanit", sans-serif;
 }
 
+.mint{
+  text-align: center;
+  margin: auto;
+}
 /* HomeBanner */
 .HomeBanner {
   padding-top: 3em;
