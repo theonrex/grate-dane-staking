@@ -95,7 +95,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Head>
             <meta
               name="description"
-              content="Welcome to Theon-X, your go-to source for all things Blockchain. Our website is designed to provide you with everything you need to stay up-to-date on the world of digital currencies, from real-time price updates to the latest news and articles."
+              content="Welcome to Gratedane, your go-to source for all things Nft Staking."
             />
             <link rel="shortcut icon" href="favicon.png" />
             <title> Great Dane</title>
